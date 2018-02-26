@@ -188,6 +188,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bootstrap-sass
+  bundler
   devise
   figaro
   font-awesome-sass
