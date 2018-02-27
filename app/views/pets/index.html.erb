@@ -2,7 +2,7 @@
 
 <ul>
   <% @pets.each do |pet| %>
-    <li> <%= pet.name %> </li>
+    <li> <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %> <%= pet.name %> </li>
     <% if policy(pet).destroy? %>
       <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: "Are you sure?" }%>
     <% end %>
