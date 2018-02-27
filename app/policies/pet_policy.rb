@@ -9,8 +9,11 @@ class PetPolicy < ApplicationPolicy
     true
   end
 
-
   def destroy?
     record.user == user
+  end
+
+  def dashboard?
+    true
   end
 end

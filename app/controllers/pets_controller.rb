@@ -5,6 +5,11 @@ class PetsController < ApplicationController
     @pets = policy_scope(Pet)
   end
 
+  def dashboard
+    @pets = current_user.pets
+    authorize @pets
+  end
+
   def show
   end
 
