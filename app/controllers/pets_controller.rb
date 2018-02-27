@@ -8,6 +8,22 @@ class PetsController < ApplicationController
   def show
   end
 
+  def new
+    @pet = current_user.pets.new
+    authorize @pet
+  end
+
+  def create
+    @pet = Pet.new(pet_params)
+    @pet.user = current_user
+    authorize @pet
+    if @pet.save
+      redirect_to pet_path(@pet)
+    else
+      render :new
+    end
+  end
+
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
