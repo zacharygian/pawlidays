@@ -18,7 +18,7 @@ class PetsController < ApplicationController
     @pet.user = current_user
     authorize @pet
     if @pet.save
-      redirect_to pet_path(@pet)
+      redirect_to pets_path(@pet)
     else
       render :new
     end
@@ -27,7 +27,8 @@ class PetsController < ApplicationController
   def destroy
     @pet = Pet.find(params[:id])
     @pet.destroy
-    redirect_to pet_path(@pets)
+    authorize @pet
+    redirect_to pets_path
   end
 
   private
