@@ -6,10 +6,8 @@
     <% if policy(pet).destroy? %>
       <%= link_to "Delete", pet_path(pet), method: :delete, data: { confirm: "Are you sure?" }%>
     <% end %>
-  <% end %>
 </ul>
 
 
-<%= link_to "Add a new pet", new_pet_path %>
 
 

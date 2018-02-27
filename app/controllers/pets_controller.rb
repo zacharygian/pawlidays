@@ -23,7 +23,7 @@ class PetsController < ApplicationController
     @pet.user = current_user
     authorize @pet
     if @pet.save
-      redirect_to pets_path
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -33,7 +33,7 @@ class PetsController < ApplicationController
     @pet = Pet.find(params[:id])
     @pet.destroy
     authorize @pet
-    redirect_to pets_path
+    redirect_to dashboard_path
   end
 
   private
