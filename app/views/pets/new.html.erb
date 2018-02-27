@@ -1,5 +1,7 @@
 <%= simple_form_for @pet do |f| %>
 <%= f.input :name %>
 <%= f.input :animal_type %>
+<%= f.input :photo %>
+<%= f.input :photo_cache, as: :hidden %>
 <%= f.submit "Add my pet" %>
 <% end %>
