@@ -5,3 +5,5 @@
   <p>Booking Date: <%= booking.date %></p>
   <p><%= booking.time %></p>
 <% end %>
+
+<%= button_to "Book Now", pet_bookings_path(@pet), class: "btn btn-primary" %>
