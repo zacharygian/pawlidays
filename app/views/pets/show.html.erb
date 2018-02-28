@@ -1,9 +1,8 @@
 <h1>Pet's details</h1>
 <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
 <%= @pet.name %>
-<% @pet.bookings.each do |booking| %>
-  <p>Booking Date: <%= booking.date %></p>
-  <p><%= booking.time %></p>
+<% @pet.availability.each do |availability| %>
+<%= availability.date %>
 <% end %>
 
 <%= button_to "Book Now", pet_bookings_path(@pet), class: "btn btn-primary" %>

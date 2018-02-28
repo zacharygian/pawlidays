@@ -1,6 +1,9 @@
+require 'simple-form-datepicker'
+
 <%= simple_form_for @pet do |f| %>
-<%= f.input :name %>
+<%= f.input :name%>
 <%= f.input :animal_type %>
+<%= f.input :availability, as: :date, html5: true %>
 <%= f.input :photo %>
 <%= f.input :photo_cache, as: :hidden %>
 <%= f.submit "Add my pet" %>
