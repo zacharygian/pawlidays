@@ -11,17 +11,19 @@ class PetsController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     authorize @pet
   end
 
   def new
-    @pet = current_user.pets.new
+    @pet = Pet.new
     authorize @pet
   end
 
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    @pet.availability << params[:availability]
     authorize @pet
     if @pet.save
       redirect_to dashboard_path
@@ -44,6 +46,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :animal_type, :user_id, :photo)
+    params.require(:pet).permit(:name, :animal_type, :user_id, :photo, :availability)
   end
 end

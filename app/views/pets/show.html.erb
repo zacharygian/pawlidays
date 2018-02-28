@@ -6,4 +6,9 @@
   <p><%= booking.time %></p>
 <% end %>
 
-<%= button_to "Book Now", pet_bookings_path(@pet), class: "btn btn-primary" %>
+<%= simple_form_for [@pet, @booking] do |f| %>
+  <%= f.input :date, collection: @pet.availability %>
+  <%= f.submit "Book Now", class: "btn btn-primary" %>
+<% end %>
+
+
