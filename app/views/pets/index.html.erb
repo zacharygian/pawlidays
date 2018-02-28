@@ -1,16 +1,19 @@
 
-<h2>All the pets!!</h2>
+<h2>Pets in your area:</h2>
 
-<ul>
-  <% @pets.each do |pet| %>
-    <li> <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
-      <%= pet.name %> </li>
-      <%= link_to "Details", pet_path(pet) %>
-    <% if policy(pet).destroy? %>
-    <% end %>
-  <% end %>
-</ul>
-
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @pets.each do |pet| %>
+        <div class="card">
+          <div class="card-category"><%= pet.name %></div>
+          <div class="card-user"><%= cl_image_tag pet.photo %>
+          </div>
+          <%= link_to "Details", pet_path(pet), class: "btn-medium"%>
+        </div>
+        <% if policy(pet).destroy? %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

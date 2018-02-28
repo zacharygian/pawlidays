@@ -1,0 +1,46 @@
+.card {
+  height: 175px;
+  background-color: rgba(255,255,255, 0.8);
+  box-shadow: 3px 3px 10px #c0d0d2;
+  color: #2b475e;
+  position: relative;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+.card-user {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  img {
+    width: 120px;
+    border-radius: 50%;
+    border-style: solid;
+    box-shadow: 1px 1px 1px #c0d0d2;
+  }
+}
+.card-category {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.btn-medium {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  text-align: center;
+  text-decoration: none;
+  color: #2b475e;
+  border: 1px solid #2b475e;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #ffd43d;
+  border-color: #ffd43d;
+}
