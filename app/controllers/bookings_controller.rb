@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :find_pet, only: [:dashboard, :new, :create]
+
 
   def dashboard
     @bookings = current_user.bookings
+    authorize @bookings
   end
 
   def new
@@ -22,6 +23,10 @@ class BookingsController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:pet_id])
+  end
+
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params

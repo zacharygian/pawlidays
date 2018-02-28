@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :pets
-  has_many :bookings, through: :pets
+  has_many :bookings
 end
