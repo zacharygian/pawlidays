@@ -1,0 +1,12 @@
+<h1>My Pets</h1>
+<ul>
+  <% @pets.each do |pet| %>
+    <li>
+      <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
+      <%= pet.name %>
+      <%= link_to "Details", pet_path(pet) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add another pet", new_pet_url %>
