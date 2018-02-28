@@ -1,15 +1,13 @@
 class BookingsController < ApplicationController
-  before_action :find_booking,
+  # before_action :find_booking,
 
   def index
     @bookings = Booking.All
   end
 
-  def show
-    @user = current_user
-    @booking = Booking.find(params[:id])
-    # pets/1/bookings/5
-    # pets/:id_id/bookings/:id
+  def dashboard
+    @bookings = current_user.bookings
+    authorize @bookings
   end
 
   def new
@@ -25,9 +23,11 @@ class BookingsController < ApplicationController
 
   private
 
-  def find_user_pet?
+  def find_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
+    params.require(:booking).permit(:date, :time)
   end
 end

@@ -1,0 +1,10 @@
+<h1>My Bookings</h1>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= booking.date %> : <%= booking.time %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back", pets_path %>

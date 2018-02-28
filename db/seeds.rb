@@ -15,4 +15,5 @@ puts(user.id)
   Pet.create!(user: user, name: Faker::Cat.name, animal_type: Faker::Cat.breed)
 end
 
+
 puts('Created 20 pets!')
