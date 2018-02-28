@@ -23,10 +23,10 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
-    @pet.availability << params[:availability]
+    @pet.availability << params[:pet][:availability]
     authorize @pet
     if @pet.save
-      redirect_to dashboard_path
+      redirect_to owner_path
     else
       render :new
     end
