@@ -8,4 +8,8 @@ class BookingPolicy < ApplicationPolicy
   def dashboard?
       true
   end
+
+  def create?
+      true
+  end
 end

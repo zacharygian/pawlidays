@@ -2,7 +2,7 @@
 <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
 <%= @pet.name %>
 <% @pet.availability.each do |availability| %>
-<%= availability.date %>
+<%= availability %>
 <% end %>
 
 <%= simple_form_for [@pet, @booking] do |f| %>
