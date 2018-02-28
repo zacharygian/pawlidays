@@ -2,7 +2,8 @@
 <ul>
   <% @bookings.each do |booking| %>
     <li>
-      <%= booking.date %> : <%= booking.time %>
+      <%= booking.nice_date %>
+      <%= booking.pet.name %> : <%= booking.pet.animal_type %>
     </li>
   <% end %>
 </ul>
