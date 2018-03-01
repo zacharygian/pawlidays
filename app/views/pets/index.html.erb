@@ -4,17 +4,14 @@
 <div class="container">
   <div class="row">
     <% @pets.each do |pet| %>
+    <%= link_to pet_path(pet) do %>
       <div class="col-xs-12 col-sm-4">
-        <div class="card">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
           <div class="card-category"><%= pet.name %></div>
-          <div class="card-user"><%= cl_image_tag pet.photo %>
-          </div>
-          <%= link_to "Details", pet_path(pet), class: "btn-medium"%>
         </div>
-        <% if policy(pet).destroy? %>
-        <% end %>
-        </div>
+      </div>
       <% end %>
+    <% end %>
   </div>
 </div>
 

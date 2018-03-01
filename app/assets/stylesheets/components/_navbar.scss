@@ -13,10 +13,11 @@
 /* Logo */
 .navbar-logo img {
   height: 50px;
-}
-
-.navbar-logo:hover {
-  transform: scale(1.2);
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+  &:hover{
+    transform: scale(1);
+  }
 }
 
 /* User Avatar */
@@ -43,11 +44,12 @@
 .navbar-wagon-link {
   color: white;
   font-size: 14px;
-}
-.navbar-wagon-link:hover {
-  color: #ffd43d;
-  text-decoration: none;
-  transform: scale(1.2);
+  transform: scale(0.95);
+  transition: box-shadow 0.5s, transform 0.5s;
+  &:hover{
+    transform: scale(1);
+    color: #ffd43d;
+  }
 }
 
 /* Dropdown menu */
