@@ -1,10 +1,15 @@
-.map {
-  position: fixed !important;
-  z-index: 1;
-  right: 30px;
-  overflow-x: hidden;
-}
-.contain {
+.wrapper-map {
   display: flex;
-  align-items: center;
+}
+
+.mapper {
+  width: 400px;
+  height: 100vh;
+  margin-top: 93px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  position: sticky !important;
+  top: 0 !important;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px #c0d0d2;
 }

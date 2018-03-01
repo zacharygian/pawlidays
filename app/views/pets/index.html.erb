@@ -1,25 +1,22 @@
-<div class="container contain">
-  <div class="row all-cards">
-    <h2>Pets in your area:</h2>
-    <% @pets.each do |pet| %>
-    <%= link_to pet_path(pet) do %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
-          <div class="card-category"><%= pet.name %></div>
+<div class="wrapper-map">
+  <div class="container">
+    <h2>Pets in your area</h2>
+    <div class="row all-cards">
+      <% @pets.each do |pet| %>
+      <%= link_to pet_path(pet) do %>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
+            <div class="card-category"><%= pet.name %></div>
+          </div>
         </div>
-      </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
   <div
-    class="col-xs-12 col-sm-4 map"
-    id="map"
-    style="width: 400px;
-    height: 450px;
-    margin: auto 10px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 10px #c0d0d2;"
-    data-markers="<%= @markers.to_json %>"
+      class="mapper"
+      id="map"
+      data-markers="<%= @markers.to_json %>"
   ></div>
 </div>
 
