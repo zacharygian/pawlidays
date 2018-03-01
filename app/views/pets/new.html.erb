@@ -1,6 +1,7 @@
 <%= simple_form_for @pet do |f| %>
   <%= f.input :name%>
   <%= f.input :animal_type %>
+  <%= f.input :description %>
 
   <%= f.input :availability, as: :date, html5: true %>
 
