@@ -1,23 +1,3 @@
-<head>
-<title>dashboard</title>
-</head>
-
-<body>
-<h2>My Pets:</h2>
-<ul>
-  <% @pets.each do |pet| %>
-    <li>
-      <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
-      <%= pet.name %>
-      <%= link_to "Edit/Add Availability", edit_pet_path(pet) %>
-      <%= link_to "Delete Pet", pet_path(pet), :method => :delete, data: {:confirm => "You sure?" }%>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "Add another pet", new_pet_url %>
-</body>
-
 <div class="container contain">
   <div class="row all-cards">
     <h2>Hi<%= @user.name %>, here are your pets:</h2>
