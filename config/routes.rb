@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => :registrations }
   authenticated :user do
     root 'pets#index', as: :authenticated_root
   end
@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile'
 
   as :user do
-    get 'users', to: 'pages#profile', as: :user_root
+    get 'login', to: 'pets#index'
   end
 
 end
