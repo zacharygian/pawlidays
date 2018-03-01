@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.4.3'
 
 gem "geocoder"
+
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 

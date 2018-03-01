@@ -3,6 +3,14 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
+    @users = User.where.not(latitude: nil, longitude: nil)
+    @markers = @users.map do |flat|
+      {
+        lat: user.latitude,
+        lng: user.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def dashboard
@@ -47,6 +55,5 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :animal_type, :user_id, :photo, :availability)
-
   end
 end
