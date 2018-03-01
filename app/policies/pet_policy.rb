@@ -16,4 +16,12 @@ class PetPolicy < ApplicationPolicy
   def dashboard?
     true
   end
+
+  def edit?
+    true
+  end
+
+  def update?
+    true
+  end
 end
