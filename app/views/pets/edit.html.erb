@@ -1,0 +1,33 @@
+
+<div class="login-form">
+
+<div class = "login-content">
+<h1>Edit <%= @pet.name %> </h1>
+<%= image_tag @pet.photo, :style => "border-radius: 50%;
+    border-style: solid;"%>
+
+<%= simple_form_for @pet do |f| %>
+  <%= f.input :name%>
+  <%= f.input :animal_type %>
+  <%= f.input :availability, as: :date, html5: true %>
+  <%= f.input :photo %>
+  <%= f.input :photo_cache, as: :hidden %>
+  <%= f.submit "Edit my pet" %>
+<% end %>
+
+<h3>Availabilities</h3>
+<ul>
+  <% @pet.availability.each do |date| %>
+  <li style="list-style-type: none;">
+    <%= date %>
+  </li>
+<% end %>
+</ul>
+
+
+</div>
+</div>
+
+
+
+

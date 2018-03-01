@@ -9,7 +9,8 @@
     <li>
       <%= cl_image_tag pet.photo, height: 300, width: 400, crop: :fill %>
       <%= pet.name %>
-      <%= link_to "Details", pet_path(pet) %>
+      <%= link_to "Edit/Add Availability", edit_pet_path(pet) %>
+      <%= link_to "Delete Pet", pet_path(pet), :method => :delete, data: {:confirm => "You sure?" }%>
     </li>
   <% end %>
 </ul>

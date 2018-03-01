@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :find_pet, only: [:show]
+  before_action :find_pet, only: [:show, :destroy, :edit, :update]
 
   def index
     @pets = policy_scope(Pet)
@@ -32,11 +32,25 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+    authorize @pet
+  end
+
+  def update
+    @pet.update(
+      name: params[:pet][:name],
+      animal_type: params[:pet][:animal_type],
+      availability: @pet.availability << params[:pet][:availability],
+      photo: params[:pet][:photo]
+      )
+    authorize @pet
+    redirect_to owner_path
+  end
+
   def destroy
-    @pet = Pet.find(params[:id])
     @pet.destroy
     authorize @pet
-    redirect_to dashboard_path
+    redirect_to owner_path
   end
 
   private
@@ -47,6 +61,5 @@ class PetsController < ApplicationController
 
   def pet_params
     params.require(:pet).permit(:name, :animal_type, :user_id, :photo, :availability)
-
   end
 end
