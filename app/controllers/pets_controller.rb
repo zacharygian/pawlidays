@@ -3,11 +3,11 @@ class PetsController < ApplicationController
 
   def index
     @pets = policy_scope(Pet)
-    @users = User.where.not(latitude: nil, longitude: nil)
-    @markers = @users.map do |user|
+    @user = User.where.not(latitude: nil, longitude: nil)
+    @markers = @user.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude#,
+        lng: user.longitude
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
     end
