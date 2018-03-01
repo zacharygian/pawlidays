@@ -1,0 +1,10 @@
+.map {
+  position: fixed !important;
+  z-index: 1;
+  right: 30px;
+  overflow-x: hidden;
+}
+.contain {
+  display: flex;
+  align-items: center;
+}
