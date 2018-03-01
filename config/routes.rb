@@ -11,4 +11,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/dashboard', to: 'bookings#dashboard'
   get '/owner', to: 'pets#dashboard'
+  get '/profile', to: 'pages#profile'
+
+  as :user do
+    get 'users', to: 'pages#profile', as: :user_root
+  end
+
 end

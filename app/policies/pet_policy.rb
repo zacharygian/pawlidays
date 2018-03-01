@@ -24,4 +24,8 @@ class PetPolicy < ApplicationPolicy
   def update?
     true
   end
+
+  def show_profile
+    true
+  end
 end
