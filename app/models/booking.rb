@@ -4,7 +4,6 @@ class Booking < ApplicationRecord
 
 
   def nice_date
-   date.strftime("%b %d, %Y")
+    date.strftime("%b %d, %Y") if date
   end
-
 end
