@@ -1,4 +1,7 @@
 .card {
+  position: relative;
+  font-size: 32px;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,6 +21,7 @@
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
   }
 }
+
 .card-user {
   position: absolute;
   right: 25px;
@@ -29,9 +33,9 @@
     box-shadow: 1px 1px 1px #c0d0d2;
   }
 }
+
 .card-category {
   text-align: center;
-  font-size: 32px;
   color: white;
   text-transform: uppercase;
 }
