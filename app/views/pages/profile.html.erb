@@ -1,6 +1,13 @@
-<h1>Profile</h1>
-<%= @user.name %>
-<%= @user.phone_number %>
-<%= @user.address %>
+<div class="login-form">
 
-<%= link_to "Edit your Profile", edit_user_registration_path  %>
+<div class = "login-content">
+
+<h1>Profile</h1>
+<p><%= @user.name %></p>
+<p><%= @user.email %></p>
+<p><%= @user.phone_number %></p>
+<p><%= @user.address %></p>
+
+<%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary"  %>
+ </div>
+</div>

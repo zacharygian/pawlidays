@@ -1,6 +1,6 @@
 <div class="container contain">
   <div class="row all-cards">
-    <h2>Hi<%= @user.name %>, here are your pets:</h2>
+    <h2>Hi <%= @user.name %>, here are your pets:</h2>
     <% @pets.each do |pet| %>
     <%= link_to pet_path(pet) do %>
       <div class="col-xs-12 col-sm-4">
@@ -18,4 +18,12 @@
     <% end %>
   </div>
 </div>
-<div><%= link_to "Add another pet", new_pet_url %></div>
+<div class="login-form">
+<div class = "login-content">
+  <div>
+  <%= link_to new_pet_url do %>
+    <i style="font-size: 40px; color: #2b475e; opacity: 0.8"class="fas fa-plus-circle"></i>
+  <% end %>
+  </div>
+</div>
+</div>
