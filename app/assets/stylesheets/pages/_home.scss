@@ -3,11 +3,10 @@
   position: relative;
   text-align: center;
   color: white;
-  background-image: url("https://source.unsplash.com/DTSDD968Mpw/1600x900");
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 75%), url("https://source.unsplash.com/DTSDD968Mpw/1600x900");
   background-repeat: none;
   background-size: cover;
   height: 100vh;
-  opacity: 0.8;
 }
 
 .content {

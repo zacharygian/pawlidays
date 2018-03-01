@@ -1,13 +1,17 @@
+<div class="backgroundprofile">
 <div class="login-form">
 
-<div class = "login-content">
-
-<h1>Profile</h1>
-<p><%= @user.name %></p>
-<p><%= @user.email %></p>
-<p><%= @user.phone_number %></p>
-<p><%= @user.address %></p>
-
-<%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary"  %>
- </div>
+  <div class = "login-content">
+    <div class="profile-card">
+      <h1>Profile</h1>
+      <div class="profile-card-items"><p class="fas fa-user">  <%= @user.name %></p></div>
+      <div class="profile-card-items"><p class="fas fa-at">  <%= @user.email %></p></div>
+      <div class="profile-card-items"><p class="fas fa-phone">  <%= @user.phone_number %></p></div>
+      <div class="profile-card-items"><p class="fas fa-location-arrow">  <%= @user.address %></p></div>
+      <div class="profile-button">
+        <%= link_to "Edit your Profile", edit_user_registration_path, class: "btn btn-primary btnprofile"  %>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

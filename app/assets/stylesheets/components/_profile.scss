@@ -1,0 +1,39 @@
+.profile-card {
+  border-width: 1px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #c0d0d2;
+  height: auto;
+  width: 115%;
+  height: 102%;
+  background-color: rgba(255,255,255,0.7);
+}
+
+.profile-card-items {
+  margin: 3px;
+  color: black !important;
+}
+
+.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btnprofile {
+  box-shadow: 1px 1px 3px #c0d0d2;
+  transition: color 0.3s, background 0.3s;
+}
+
+.btnprofile:hover {
+  background: rgba(255,255,255,0.4);
+  border-color: #2b475e;
+  color: #2b475e;
+}
+
+.backgroundprofile {
+  background-image: linear-gradient(rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 50%), url('profile_back.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  }
