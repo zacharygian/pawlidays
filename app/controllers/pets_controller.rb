@@ -50,7 +50,8 @@ class PetsController < ApplicationController
       name: params[:pet][:name],
       animal_type: params[:pet][:animal_type],
       availability: @pet.availability << params[:pet][:availability],
-      photo: params[:pet][:photo]
+      photo: params[:pet][:photo],
+      description: params[:pet][:description]
       )
     authorize @pet
     redirect_to owner_path
@@ -69,6 +70,6 @@ class PetsController < ApplicationController
   end
 
   def pet_params
-    params.require(:pet).permit(:name, :animal_type, :user_id, :photo, :availability)
+    params.require(:pet).permit(:name, :animal_type, :user_id, :photo, :availability, :description)
   end
 end
