@@ -4,7 +4,7 @@ class PetsController < ApplicationController
   def index
     @pets = policy_scope(Pet)
     @users = User.where.not(latitude: nil, longitude: nil)
-    @markers = @users.map do |flat|
+    @markers = @users.map do |user|
       {
         lat: user.latitude,
         lng: user.longitude#,
