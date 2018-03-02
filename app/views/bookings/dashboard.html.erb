@@ -1,16 +1,25 @@
 <h1>My Bookings</h1>
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <%= cl_image_tag booking.pet.photo, height: 300, width: 400, crop: :fill %>
-    <p>You're taking care of <%= booking.pet.name %> on  <%= booking.nice_date %> </p>
-    <p> <%= booking.pet.name %> is a <%= booking.pet.animal_type %> </p>
-    <strong><p>The owner has added a description:</p></strong>
-    <p> <%= booking.pet.description %> </p>
+<div class="container">
+
+    <% @bookings.each do |booking| %>
+
+      <div class="booking-card">
+        <div class="booking-photo">
+          <%= cl_image_tag booking.pet.photo, height: 300, width: 400, crop: :fill %>
+        </div>
+
+        <div class="booking-content">
+          <p>You're taking care of <%= booking.pet.name %> on  <%= booking.nice_date %> </p>
+          <p> <%= booking.pet.name %> is a <%= booking.pet.animal_type %> </p>
+          <strong><p>The owner has added a description:</p></strong>
+          <p> <%= booking.pet.description %> </p>
+        </div>
+      </div>
+
+    <% end %>
+
+</div>
 
 
-    </li>
-  <% end %>
-</ul>
 
 <%= link_to "Back", pets_path %>
