@@ -1,35 +1,46 @@
-<div class="login-form">
-  <div class = "login-content">
-    <h1> <%= @pet.name %>'s paw-rsonal profile! </h1>
-    <% if @pet.photo %>
-    <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <%= image_tag "placeholder.png" %>
-     <% end %>
-
-    <%= @pet.name %>
-    <%= @pet.description %>
-    <br>
-    <%  if @pet.bookings%>
-    <% @pet.bookings.each do |booking| %>
-    <p>Sitting scheduled at :</p>
-    <%= booking.date %>
-    <%= booking.time %>
-    <p>with</p>
-   <%  if booking.user == current_user %>
-    <%= link_to booking.user.name, profile_path %>
-    <%  else %>
-    <%= booking.user.name%>
-      <% end %>
-    <% end %>
-    <% end %>
-
-
-
-    <%= simple_form_for [@pet, @booking] do |f| %>
-      <%= f.input :date, collection: @pet.availability %>
-      <%= f.submit "Book Now", class: "btn btn-primary" %>
-    <% end %>
+<div class="login-form" id="pawrsonal-backback">
+  <div class="container">
+    <div><h3><%= @pet.name %>'s paw-rsonal profile</h3></div>
+    <div class="align-profile">
+        <div id="pawrsonal-background">
+          <div class = "login-content">
+            <div id="img-circle">
+              <% if @pet.photo %>
+              <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+              <% else %>
+                <%= image_tag "placeholder.png" %>
+              <% end %>
+            </div>
+          <div><h4><%= @pet.name %></h4></div>
+          <div><%= @pet.description %></div>
+          <br>
+          <div>
+            <%  if @pet.bookings%>
+              <% @pet.bookings.each do |booking| %>
+                <h5>Sitting scheduled at :</h5>
+                <%= booking.date %>
+                <p>with</p>
+                  <%  if booking.user == current_user %>
+                    <div class= "owner-link">
+                      <%= link_to booking.user.name, profile_path %>
+                    </div>
+                  <%  else %>
+                    <div class= "owner-link">
+                      <%= booking.user.name %>
+                    </div>
+                  <% end %>
+              <% end %>
+          </div>
+            <% end %>
+          <div>
+            <%= simple_form_for [@pet, @booking] do |f| %>
+              <%= f.input :date, collection: @pet.availability %>
+              <%= f.submit "Book Now", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
