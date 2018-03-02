@@ -15,8 +15,9 @@
   border-radius: 5px;
   margin: 10px auto;
   transform: scale(0.95);
-  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.3s, transform 0.3s;
   &:hover{
+    text-decoration: none;
     transform: scale(1);
     box-shadow: 5px 20px 30px rgba(0,0,0,0.2);
   }
@@ -38,8 +39,24 @@
   text-align: center;
   color: white;
   text-transform: uppercase;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .all-cards {
   flex-grow: 1;
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.pet-details a{
+  list-style: none;
+  text-decoration: none;
+}
+
+.pet-details:hover a{
+  text-decoration: none;
 }

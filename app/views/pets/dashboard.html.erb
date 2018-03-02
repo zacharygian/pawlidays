@@ -1,14 +1,14 @@
-<div class="container contain">
+<div class="container">
   <div class="row all-cards">
     <h2>Hi <%= @user.name %>, here are your pets:</h2>
     <% @pets.each do |pet| %>
     <%= link_to pet_path(pet) do %>
       <div class="col-xs-12 col-sm-4">
-        <div class="pet">
+        <div>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
             <div class="card-category"><%= pet.name %></div>
           </div>
-          <ul class="pet-details" style="list-style: none;">
+          <ul class="pet-details">
             <li><%= link_to "Edit/Add Availability", edit_pet_path(pet) %></li>
             <li><%= link_to "Delete Pet", pet_path(pet), :method => :delete, data: {:confirm => "You sure?" }%></li>
           </ul>
