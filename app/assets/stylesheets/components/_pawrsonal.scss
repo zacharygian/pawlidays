@@ -1,0 +1,50 @@
+#img-circle {
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#img-circle img {
+  border-radius: 50%;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  border: white 1px solid;
+  width: 140px;
+  height: 125px;
+}
+
+#pawrsonal-background {
+  width: 300px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  background-color: rgba(255,255,255,0.4);
+  padding: 10px 20px;
+  border: black 1px solid;
+  text-shadow: 2px 2px 5px black;
+  border-radius: 8px;
+  transform: scale(0.80);
+  transition: box-shadow 0.2s, transform 0.2s;
+  &:hover{
+    text-decoration: none;
+    transform: scale(0.81);
+    box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  }
+}
+
+#pawrsonal-backback {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 75%), url("paw_back.jpeg");
+  background-repeat: none;
+  background-size: cover;
+  height: 100vh;
+}
+
+.align-profile {
+  display: flex;
+  justify-content: space-around;
+}
+
+.owner-link a {
+  color: white;
+  text-decoration: none;
+  font-size: 32px;
+}
