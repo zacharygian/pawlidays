@@ -17,6 +17,7 @@
   transition: box-shadow 0.5s, transform 0.5s;
   &:hover{
     transform: scale(1);
+    text-decoration: none;
   }
 }
 
@@ -49,6 +50,7 @@
   &:hover{
     transform: scale(1);
     color: #ffd43d;
+    text-decoration: none;
   }
 }
 
