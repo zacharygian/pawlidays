@@ -1,10 +1,31 @@
 <div class="login-form">
   <div class = "login-content">
     <h1> <%= @pet.name %>'s paw-rsonal profile! </h1>
+
+
+    <% if @pet.photo %>
     <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+    <% else %>
+      <%= image_tag "placeholder.png" %>
+     <% end %>
 
     <%= @pet.name %>
     <%= @pet.description %>
+    <br>
+    <%  if @pet.bookings%>
+    <p>Sitting scheduled at :</p>
+    <% @pet.bookings.each do |booking| %>
+    <%= booking.date %>
+    <%= booking.time %>
+    <p>with</p>
+   <%  if !booking.user == current_user %>
+    <%= link_to booking.user.name, profile_path %>
+    <%  else %>
+    <%= booking.pet.user.name%>
+      <% end %>
+    <% end %>
+    <% end %>
+
 
 
     <%= simple_form_for [@pet, @booking] do |f| %>

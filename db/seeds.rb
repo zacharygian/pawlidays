@@ -8,11 +8,14 @@
 
 require 'faker'
 
+Pet.destroy_all
+
 user = User.first
 puts(user.id)
 
 20.times do |index|
-  Pet.create!(user: user, name: Faker::Cat.name, animal_type: Faker::Cat.breed)
+  Pet.new(user: user, name: Faker::Cat.name, animal_type: Faker::Cat.breed, photo: "image/upload/v1519892210/uf18laf5zb3zf5trjxoz.jpg").save
+  puts "created a pet!"
 end
 
 

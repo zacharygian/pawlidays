@@ -5,8 +5,9 @@
       <% @pets.each do |pet| %>
       <%= link_to pet_path(pet) do %>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
-            <div class="card-category"><%= pet.name %></div>
+
+     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= cl_image_path pet.photo, crop: :fill %>')">
+        <div class="card-category"><%= pet.name %></div>
           </div>
         </div>
         <% end %>
