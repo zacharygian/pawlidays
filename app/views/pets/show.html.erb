@@ -18,10 +18,10 @@
     <%= booking.date %>
     <%= booking.time %>
     <p>with</p>
-   <%  if !booking.user == current_user %>
+   <%  if booking.user == current_user %>
     <%= link_to booking.user.name, profile_path %>
     <%  else %>
-    <%= booking.pet.user.name%>
+    <%= booking.user.name%>
       <% end %>
     <% end %>
     <% end %>
