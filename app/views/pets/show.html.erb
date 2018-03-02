@@ -13,8 +13,8 @@
     <%= @pet.description %>
     <br>
     <%  if @pet.bookings%>
-    <p>Sitting scheduled at :</p>
     <% @pet.bookings.each do |booking| %>
+    <p>Sitting scheduled at :</p>
     <%= booking.date %>
     <%= booking.time %>
     <p>with</p>
