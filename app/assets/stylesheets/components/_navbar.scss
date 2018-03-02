@@ -14,9 +14,9 @@
 .navbar-logo img {
   height: 50px;
   transform: scale(0.95);
-  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.2s, transform 0.2s;
   &:hover{
-    transform: scale(1);
+    transform: scale(1.02 );
     text-decoration: none;
   }
 }
@@ -46,9 +46,9 @@
   color: white;
   font-size: 14px;
   transform: scale(0.95);
-  transition: box-shadow 0.5s, transform 0.5s;
+  transition: box-shadow 0.2s, transform 0.2s;
   &:hover{
-    transform: scale(1);
+    transform: scale(1.02);
     color: #ffd43d;
     text-decoration: none;
   }
