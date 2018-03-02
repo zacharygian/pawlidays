@@ -33,6 +33,7 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     @pet.availability << params[:pet][:availability]
+
     authorize @pet
     if @pet.save
       redirect_to owner_path
